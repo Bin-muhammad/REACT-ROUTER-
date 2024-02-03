@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+ 
+ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-
+import Abbaut from './component/Abbaut';
+ import Home from './Home';
+ import Chekh from './Chekh';
+ import Docs from './Docs';
+ import Wepp from './Wepp';
+ import ERRER from './ERRER';
+ 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/Abbaut' element={<Abbaut/>}/>
+        <Route path='/Chekh' element={<Chekh/>} />
+        <Route path='/Docs' element={<Docs/>} />
+        <Route path='/Wepp' element={<Wepp/>} />
+        <Route path="*" element={<ERRER/>}/>
+        </Routes>    
+    </BrowserRouter>
+     </>
+  )
 }
 
 export default App;
